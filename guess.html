@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+}
+body{
+    background-color:#212121;
+    /* height: 570px; */
+/* overflow-x: hidden; */
+overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 540px;
+    /* height: 100%; */
+    
+    /* height: 100vh; */
+    width: 100%;
+    /* height: 100vh; */
+    align-content: center;
+    justify-content: center;
+   /* margin: auto; */
+ flex-wrap: wrap;
+    background-color: black;
+    color: #fff;
+}
+
+
+
+.name{
+    animation: nam 2s ease-in-out infinite alternate ;
+    display: flex;
+    justify-content: center;
+}
+@keyframes nam{
+    0%{
+        transform: translate(50px);
+        color: bisque;
+    }
+    50%{
+        color: aqua;
+    }
+    100%{
+        transform: translate(-50px);
+        color: yellow;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+#subt{
+    padding: 2px 5px;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid blanchedalmond;
+    border-radius: 6px;
+    transition: all 1s ease ;
+}
+label{
+    font-size: 20px;
+}
+#input{
+    font-size: 28px;
+    text-align: center;
+    outline: none;
+}
+.previousGuess{
+   border:2px solid white;
+}
+#subt:hover{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: white;
+    outline: none;
+    transform:  scale(1.1) skew(4deg);
+ 
+    /* animation: hove 2s alternate 0.2s infinite ease-in-out; */
+   
+    /* border: none; */
+}
+/* @keyframes hove{
+   from{
+    transform: rotate(10deg);
+   }
+   to{
+    transform: rotate(-10deg);
+   }
+} */
+.resultparas{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
+}
+.box{
+    background-color:#414141;
+    min-height: 350px;
+    min-width: 300px;
+    display: flex;
+    border: 2px solid white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.resultparas>.btn>a{
+    color: white;
+    text-decoration: none;
+}
+.btn{
+background-color: black;
+height: 30px;
+width: 100px;
+border: none;
+}
+.resultparas>.btn>a:hover{
+    color: bisque;
+    font-weight: bold;
+}
+.lowOrhi{
+    color: red;
+}
+
+@media (max-width: 500px){
+    .box{
+    background-color:#414141;
+    min-height: 300px;
+    width: 350px;
+    display: flex;
+    border: 2px solid white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    height: 700px;
+}
+#input{
+    font-size: 24px;
+}
+}
+</style>
+<body>
+    <nav>
+        <div id="show">
+        <ul>
+           <a href="index.html"><li>Home</li></a>
+            <a id="none" href="about.html"><li>About</li></a>
+            <a id="none" href="#"><li>Contact us</li></a>
+            <a id="none" href="#"><li>Blog</li></a>
+            <a id="none" href="#"><li>Products</li></a>
+            <a id="none" href="#"><li>Email</li></a>
+            <a style="display: none;" id="guess" href="guess.html">Guess game</a>
+            <!-- <i class="fa-solid fa-bars"></i> -->
+        </ul>
+    </div>
+    <div id="hide">
+        <i id="bar" class="fa-solid fa-bars"></i>
+        <ul>
+
+            <a href="about.html"><li>About</li></a>
+            <a href="#"><li>Contact us</li></a>
+            <a href="#"><li>Blog</li></a>
+            <a href="#"><li>Products</li></a>
+            <a href="#"><li>Email</li></a>
+       
+           
+        </ul>
+    </div>
+    </nav>
+    <div class="container">
+        
+        <div class="name">Welcome to the guess game</div>
+        <div class="box">
+    <form >
+        <label for="input">Guess Number between 1 and 100 </label>
+        <input type="text" id="input">
+        <input type="submit" id="subt">
+    </form>
+    <div class="resultparas">
+     <div >Previous Guesses are: <span class="previousGuess"></span></div>
+     <div >Remaining guesses are: <span class="result">10</span></div>
+     <div class="lowOrhi"></div>
+    
+    </div>
+</div>
+</div>
+<!-- <footer>&copy all right reserved</footer> -->
+<script src="about.js"></script>
+</body>
+<script>
+    const userInput = document.querySelector('#input')
+const submit = document.querySelector('#subt')
+const previousGuess = document.querySelector('.previousGuess')
+const remaining = document.querySelector('.result')
+const display = document.querySelector('.lowOrhi')
+const resultslot = document.querySelector('.resultparas')
+const button = document.createElement('button')
+
+
+let randomNumber = parseInt(Math.random() * 100 + 1);
+console.log(randomNumber);
+
+let guessNum = 1;
+let maxNum = 10;
+
+submit.addEventListener('click', function(e){
+    e.preventDefault();
+    const guess = parseInt(userInput.value)
+    if(isNaN(guess)) {alert('Please enter a valid number')}
+    else if(guess > 100) {alert('Please enter number less than 100')}
+    else if(guess < 1) {alert('Please enter number greater than 1')}
+    else{
+        userInput.value = ''
+        previousGuess.innerHTML += `${guess }, `
+        remaining.innerHTML = `${maxNum-guessNum}` 
+        guessNum++;
+        validateGuess(guess);
+        if(guessNum > maxNum){
+            endgame();
+        }
+    }
+})
+function validateGuess(guess){
+ if(guess > randomNumber){
+    display.innerHTML = `${guess} is high`
+ }
+ else if(guess < randomNumber){
+    display.innerHTML = `${guess} is low`
+ }
+ else if(guess === randomNumber){
+    display.innerHTML = `${guess} is the correct guess! 🎉 `
+    endgame()
+ }
+}
+function endgame(){
+    userInput.setAttribute('disabled', '')
+    // submit.setAttribute('disabled', '')
+    resultslot.appendChild(button)
+    button.addEventListener('click',newgame)
+buttonStyle()
+    }
+    function buttonStyle(){
+        button.innerHTML = 'Start New Game'
+        button.style.margin = '0px auto'
+        button.style.fontSize = '17px'
+        button.style.padding = '3px 9px'
+           button.style.border = 'none'
+           button.style.borderRadius = '7px'
+           button.style.backgroundColor = '#212121'
+           button.style.color = '#fff'
+           button.style.transition = 'all 1s ease'
+           button.addEventListener('mouseover', () =>{
+            button.style.backgroundColor = '#2121219b'
+            button.style.transform = 'scale(1.2)'
+           })
+           button.addEventListener('mouseout', () =>{
+            button.style.backgroundColor = '#212121'
+            button.style.transform = 'scale(1)'
+           })
+    }
+function newgame(){
+    event.preventDefault();
+   button.innerHTML = ''
+   randomNumber = parseInt(Math.random() * 100 + 1);
+      button.style.padding = '0px'
+    // button.style.backgroundColor = 'black'
+    userInput.removeAttribute('disabled')
+    // submit.removeAttribute('disabled')
+    previousGuess.innerHTML = ``
+    guessNum = 1;
+    remaining.innerHTML = `${maxNum}` 
+    display.innerHTML = ''
+   
+}
+</script>
+</html>

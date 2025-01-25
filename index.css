@@ -1,0 +1,390 @@
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212121;
+    /* border: 2px solid aqua; */
+ color: #fff;
+}
+
+#login{
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    height: 90vh;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+}
+#name{
+    padding: 10px 20px;
+}
+#subt{
+    padding:2px 10px ;
+    font-size: 20px;
+    background-color: rgba(255, 68, 0, 0.648);
+    color: white;
+   cursor: pointer;
+    border:1px solid whitesmoke;
+    border-radius: 5px;
+    animation: ch 3s ease-in-out 0.1s infinite alternate ;
+}
+@keyframes ch{
+    0%{
+        color: white;
+    }
+    25%{
+        color: aqua;
+    }
+    50%{
+        color: #753f3f;
+    }
+    75%{
+color: white;
+    }
+    100% {
+      
+        color: orange;
+    }
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+
+#show ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    background-color: #414141;
+    /* border: 2px solid green; */
+    margin-bottom: 10px;
+    /* position: sticky; */
+}
+#show ul>a>li{
+    list-style: none;
+    
+}
+#show ul>a>li:hover{
+    animation: move 0.2s ease-in 0.5s infinite alternate;
+}
+@keyframes move{
+    0%{
+        transform: rotate(1.5deg)
+    }
+    100%{
+        transform: rotate(-1.5deg)
+    }
+}
+#hide ul{
+    /* display: none; */
+    position: absolute;
+    top: 43px;
+    right: 2px;
+    font-size: 20px;
+
+    width: 30%;
+    background-color: #414141;
+    text-align: center;
+    display: none;
+    padding:5px ;
+  border-radius:3px ;
+  
+}
+#hide ul li{
+    color: white;
+    border-bottom:2px solid black;
+}
+li{
+    list-style: none;
+}
+#bar{
+    /* color: black; */
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    display: none;
+}
+ul>a{
+    color: #fff;
+    text-decoration: none;
+}
+main{
+min-height: 400px;
+flex-wrap: wrap;
+/* width: 100%; */
+/* border: 2px solid white; */
+display: flex;
+margin-bottom: 100px;
+/* flex: 1; */
+}
+.left{
+    width: 50%;
+    padding: 15px;
+    border: 2px solid blueviolet;
+}
+.right{
+    width: 50%;
+    padding: 15px;
+    /* border: 2px solid orange; */
+    border: 2px solid blueviolet;
+}
+h1{
+    text-align: center;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 600px;
+    margin-bottom: 100px;
+    /* flex: 1; */
+}
+.box{
+    width: 350px;
+    height: 200px;
+    border: 2px solid green;
+}
+@media (max-width:768px){
+#bar{
+    display: block;
+}
+#show ul #none{
+    display: none;
+}
+
+}
+
+@media (min-width:57px) and (max-width:590px){
+    main{
+        /* flex-wrap: nowrap; */
+        display: block;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    section{
+        margin: 20px;
+    }
+}
+.box1{
+    background-image: url(https://images.pexels.com/photos/21701368/pexels-photo-21701368/free-photo-of-cup-of-tea-and-candle-on-table.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.box2{
+    background-image: url(https://images.pexels.com/photos/15314928/pexels-photo-15314928.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.box3{
+    background-image: url(https://images.pexels.com/photos/29470460/pexels-photo-29470460/free-photo-of-stunning-ocher-landscape-of-rustrel-france.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.box4{
+    background-image: url(https://images.pexels.com/photos/21336456/pexels-photo-21336456/free-photo-of-sage-bushes-in-arid-canyon-in-utah.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.box5{
+    background-image: url(https://images.pexels.com/photos/12633951/pexels-photo-12633951.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load );
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+.box6{
+    background-image: url(https://images.pexels.com/photos/30083712/pexels-photo-30083712/free-photo-of-misty-mountain-landscape-in-vysoke-tatry.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.331);
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+   position: relative;
+   /* position: absolute; */
+   width: 100%;
+   bottom: 0px;
+}
+
+
+
+.themchanger{
+display: flex;
+margin-bottom: 1px;
+justify-content: space-between;
+}
+#theme-selector{
+height: 30px;
+/* margin-left: 10px; */
+/* margin: 0 auto; */
+outline: none;
+}
+#user >.newAcc{
+margin-right: 10px;
+padding-inline:  8px;
+height: 30px;
+}
+#guess{
+animation: guess 2s ease-in 0.5s infinite alternate;
+}
+
+@keyframes guess{
+0%{
+  
+    transform: scale(1.2);
+}
+
+}
+.message{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid white;
+    gap: 5px;
+}
+.continueButton{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: bisque;
+    animation: button 2s infinite 0.2s ease-in-out alternate ;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+@keyframes button {
+    from{
+        color: greenyellow;
+        background-color: #753f3f;
+    }
+    to{
+        color: white;
+        background-color: #414141;
+    }
+}
+.continueButton:hover{
+ 
+    transform: scale(1.1);
+}
+
+.back{
+   margin-top: -80px;
+   position: absolute;
+   color: red;
+   animation: back 6s linear 0s 1 alternate ;
+}
+@keyframes back {
+    from{
+        transform: translate(0px);
+    }
+    to{
+        transform: translate(1200px);
+    }
+}
+
+#user-show{
+    padding-left: 10px;
+ color: #7E8299;
+ cursor: pointer;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ border-radius:5px ;
+}
+#user-show:hover{
+    background-color: #F3F6F9;
+}
+#user-name{
+    cursor: pointer;
+    margin-right: 30px;
+    align-self: center;
+  /* width: 200px; */
+  display: inline-block;
+  font-weight: bold;
+}
+
+#user-hide{
+    position: fixed;
+    right: 0px;
+    display: none;
+    z-index: 1;
+    color: #7E8299;
+    height: 30%;
+    width: 300px;
+    background-color: white;
+    border-radius: 6px;
+}
+#user-naame{
+    color: #7E8299;
+    font-weight: bold;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 0px 30px;
+}
+#close{
+    /* : 5px; */
+    background-color: #F3F6F9;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#close:hover{
+    background-color: #3699FF;
+}
+.profile h3{
+    color: black;
+    font-weight: 700;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 70px;
+    justify-content: center;
+}
+.info .newAcc{
+    width: 70px;
+    background-color: #E1F0FF;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+}
+.info .newAcc:hover{
+    background-color: #3699FF;
+}
